@@ -151,9 +151,9 @@ describe("buildIndicatorTracks", () => {
 	});
 
 	it("plots a study wherever it is asked for", () => {
-		// Placement is the caller's call, exactly as it is in `KChartPro`: both
+		// Placement is the caller's call, exactly as it is in the v9 Pro layer: both
 		// lists take any name in the catalogue.
-		// 落点由调用方决定，与 `KChartPro` 一致：两个清单都接受目录里的任意名字。
+		// 落点由调用方决定，与 v9 Pro 层一致：两个清单都接受目录里的任意名字。
 		const tracks = buildIndicatorTracks(["RSI"], ["MA"], candles(series), LIGHT_THEME);
 		expect(tracks.filter((track) => track.paneIndex === 0)).toHaveLength(3);
 		expect(tracks.filter((track) => track.paneIndex === 1)).toHaveLength(4);

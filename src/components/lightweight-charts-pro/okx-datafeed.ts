@@ -20,10 +20,10 @@ const POLL_MS = 5_000;
 /**
  * The default {@link TChartProDatafeed}: history over OKX REST, the newest bar
  * refreshed on an interval, so `TChartPro` tracks the live market out of the box
- * exactly like `KChartPro` does.
+ * exactly like the v9 Pro layer does.
  *
  * 默认的 {@link TChartProDatafeed}：历史走 OKX REST，最新一根按间隔刷新，因此
- * `TChartPro` 开箱即用地跟随实时行情，与 `KChartPro` 一致。
+ * `TChartPro` 开箱即用地跟随实时行情，与 v9 Pro 层一致。
  *
  * `lightweight-charts` wants unix *seconds* on the time axis while the shared OKX
  * module speaks milliseconds, so the scale happens at this boundary.

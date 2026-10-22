@@ -10,11 +10,11 @@ import {
 } from "./t-chart-pro-options";
 
 /**
- * The strip `@klinecharts/pro` renders for its Wrapper, rebuilt for
+ * The strip the v9 Pro layer renders for its Wrapper, rebuilt for
  * `lightweight-charts`: symbol picker, bar sizes, indicator picker, drawing
  * palette, drawing controls and theme toggle.
  *
- * `@klinecharts/pro` 为它的 Wrapper 渲染的那条工具栏，这里按 `lightweight-charts`
+ * v9 Pro 层为它的 Wrapper 渲染的那条工具栏，这里按 `lightweight-charts`
  * 重建一遍：标的选择、K 线周期、指标选择、画线面板、画线控制与主题切换。
  */
 

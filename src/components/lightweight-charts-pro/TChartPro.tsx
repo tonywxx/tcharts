@@ -28,11 +28,11 @@ import { TChartProToolbar } from "./t-chart-pro-toolbar";
 
 /**
  * Everything `TChartPro` accepts: every {@link TChartProps} — so nothing the
- * plain Wrapper can do is lost — plus the Pro layer the `@klinecharts/pro`
+ * plain Wrapper can do is lost — plus the Pro layer the v9 Pro
  * Wrapper exposes.
  *
  * `TChartPro` 接受的全部属性：既有 {@link TChartProps} 的每一项（因此普通 Wrapper 能做的
- * 一切都不会丢），再加 `@klinecharts/pro` 那层 Wrapper 提供的 Pro 能力。
+ * 一切都不会丢），再加 v9 那一代 Wrapper 提供的 Pro 能力。
  *
  * The pairs below are the same feature under the two engines' names, per ADR-0001:
  * `klinecharts` owns *Symbol* / *Period* / *Datafeed*, while `lightweight-charts`
@@ -42,7 +42,7 @@ import { TChartProToolbar } from "./t-chart-pro-toolbar";
  * *Symbol* / *Period* / *Datafeed* 这些概念，`lightweight-charts` 一个都没有，因此改用
  * `CONTEXT.md` 里的领域词。
  *
- * | `KChartPro` | `TChartPro` |
+ * | the v9 Pro layer | `TChartPro` |
  * | --- | --- |
  * | `symbol` | {@link TChartProProps.symbol} |
  * | `period` / `periods` | {@link TChartProProps.barSize} / {@link TChartProProps.barSizes} |
@@ -195,12 +195,12 @@ const PRO_ONLY_KEYS = new Set([
 /**
  * A declarative React Wrapper around `lightweight-charts` v5 plus
  * `lightweight-charts-drawing`, carrying the same Pro features as
- * `KChartPro` does on `@klinecharts/pro`: a toolbar (symbol search, bar sizes,
+ * the v9 Pro layer itself ships: a toolbar (symbol search, bar sizes,
  * indicator picker, drawing palette, theme toggle), a
  * {@link TChartProDatafeed}-driven live pipeline, and a watermark — all pre-wired.
  *
  * 对 `lightweight-charts` v5 加 `lightweight-charts-drawing` 的声明式 React 封装，带着
- * `KChartPro` 在 `@klinecharts/pro` 上的同款 Pro 能力：工具栏（标的搜索、K 线周期、
+ * v9 Pro 层自身的同款 Pro 能力：工具栏（标的搜索、K 线周期、
  * 指标选择、画线面板、主题切换）、由 {@link TChartProDatafeed} 驱动的实时数据管线，
  * 以及水印，全部预先接线。
  *

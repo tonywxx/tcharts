@@ -4,7 +4,7 @@
  * with.
  *
  * The two alternatives the docs offer are worse in opposite directions.
- * `<AdaChart {...args} />` says nothing about what `args` holds, so the panel
+ * `<TChart {...args} />` says nothing about what `args` holds, so the panel
  * cannot answer the one question a reader has: which props produced this? And
  * the automatically generated source stringifies whatever the story's `render`
  * returns — for a live story that is its renderer, named after the renderer and
@@ -17,7 +17,7 @@
  * 把某个 story 的属性写成使用方会复制的 JSX —— 画布旁边那块 “Show code” 面板，由这张画布
  * 真正在用的 args 派生而来。
  *
- * 文档默认给的两种替代品朝相反的方向都不好：`<AdaChart {...args} />` 丝毫没有说明 `args` 里
+ * 文档默认给的两种替代品朝相反的方向都不好：`<TChart {...args} />` 丝毫没有说明 `args` 里
  * 是什么，于是这块面板回答不了读者唯一的问题 —— 是哪几个属性产生了眼前这张图？而自动生成的源码
  * 序列化的是 story `render` 返回的东西 —— 对实时 story 而言那是它的渲染器：名字是渲染器的，
  * 带的属性也是渲染器自己的，而不是图表的。

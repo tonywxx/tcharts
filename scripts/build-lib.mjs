@@ -6,28 +6,23 @@ import { build } from "vite";
 /**
  * Library pass for the TChart family.
  *
- * `TChart` and `TChartPro` externalise their engines: a consumer resolves
- * `lightweight-charts` itself. `@klinecharts/pro` ships inside `TChartPro`
- * because its drawings must attach to the very `IChartApi` that `TChart`
- * created, and a second copy of the library could not attach to it.
+ * `TChart` and `TChartPro` externalise their engine: a consumer resolves
+ * `lightweight-charts` itself, and that is the only engine in the bundle.
  *
- * `TChartPro` also pulls in `@klinecharts/pro`, which is compiled against the
- * KLineChart v9 runtime. The `klinechartsProUsesV9` plugin in `vite.config.ts`
- * redirects Pro's own `klinecharts` import to the v9 copy, so the dev server,
- * Storybook and the browser test project all resolve it correctly. The library
- * build below does not need the alias: Pro is bundled (not externalised) and
- * keeps its v9 reference intact.
+ * The Pro layer of the v9 generation — the one this repo's Pro layer was ported
+ * from — is a design reference, not a runtime import: `TChartPro` reimplements
+ * that layer on top of `lightweight-charts` (its drawings attach to the very
+ * `IChartApi` that `TChart` created, and a second copy of the library could not
+ * attach to it). So no klinecharts, and no v9 engine, is pulled in here.
  *
  * 该文件只构建 TChart 系列。
  *
  * `TChart` 与 `TChartPro` 把引擎设为 external：由下游自己解析 `lightweight-charts`。
- * `@klinecharts/pro` 随 `TChartPro` 一起打包，因为画线要挂在 `TChart` 建的那个
- * `IChartApi` 上，多带一份库就挂不上去。
+ * 产物里只有这一个引擎。
  *
- * `TChartPro` 还引入 `@klinecharts/pro`，它按 KLineChart v9 运行时编译。`vite.config.ts`
- * 里的 `klinechartsProUsesV9` 插件把 Pro 自己的 `klinecharts` 引用重定向到 v9 副本，使
- * dev、Storybook 与浏览器测试 project 都能正确解析。下面的库构建不需要 alias：Pro 被打包
- * （不外链），其 v9 引用保持完整。
+ * v9 那一代的 Pro 层（本仓库 Pro 层的移植来源）是设计参照，不是运行时引入：`TChartPro`
+ * 在 `lightweight-charts` 之上重新实现了那一层（画线要挂在 `TChart` 建的那个 `IChartApi`
+ * 上，多带一份库就挂不上去）。因此这里不会引入 klinecharts，也没有 v9 引擎。
  */
 
 const root = path.resolve(path.dirname(fileURLToPath(import.meta.url)), "..");

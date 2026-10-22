@@ -55,10 +55,10 @@ export type TChartProFeedCallback = (candle: TChartProCandle) => void;
 
 /**
  * The data source behind `TChartPro`: symbol search, history, and a live
- * subscription — the same four responsibilities as `@klinecharts/pro`'s
+ * subscription — the same four responsibilities as the v9 Pro layer's
  * `Datafeed`, expressed without that engine's types.
  *
- * `TChartPro` 的数据源：标的搜索、历史数据与实时订阅 —— 与 `@klinecharts/pro` 的
+ * `TChartPro` 的数据源：标的搜索、历史数据与实时订阅 —— 与 v9 Pro 层的
  * `Datafeed` 承担同样四项职责，但不带那个引擎的类型。
  */
 export interface TChartProDatafeed {
@@ -72,12 +72,12 @@ export interface TChartProDatafeed {
 }
 
 /**
- * Every indicator `TChartPro` can plot, in the order `KChartPro`'s engine lists
+ * Every indicator `TChartPro` can plot, in the order the klinecharts v9 engine lists
  * its own: the same 27 studies, so a name means the same thing whichever Wrapper
  * draws it. Either list in {@link TChartProProps} accepts any of them — the
  * engine decides nothing about placement, so neither does this layer.
  *
- * `TChartPro` 能绘制的全部指标，顺序与 `KChartPro` 引擎自带目录一致：同样 27 个指标，
+ * `TChartPro` 能绘制的全部指标，顺序与 klinecharts v9 引擎自带目录一致：同样 27 个指标，
  * 因此无论由哪一层 Wrapper 绘制，一个名字的含义都相同。{@link TChartProProps} 的
  * 两个清单都接受其中任意一个 —— 引擎不判断落点，本层同样不判断。
  */
@@ -240,10 +240,10 @@ export function chartThemeOf(theme: "light" | "dark"): ChartTheme {
 }
 
 /**
- * Toolbar strings, per locale. `@klinecharts/pro` ships its own catalogue; this
+ * Toolbar strings, per locale. The v9 Pro layer ships its own catalogue; this
  * layer only has its own buttons to name.
  *
- * 工具栏文案，按语言分。`@klinecharts/pro` 自带词条库；这一层需要命名的只有自己
+ * 工具栏文案，按语言分。v9 Pro 层自带词条库；这一层需要命名的只有自己
  * 这几个按钮。
  */
 const MESSAGES = {
@@ -298,14 +298,14 @@ export function messageFor(locale: string, key: TChartProMessageKey): string {
 /**
  * The named Theme translated into the {@link TChartProps} it implies.
  *
- * `@klinecharts/pro` takes one `theme` string because its engine owns a theme
+ * The v9 Pro layer takes one `theme` string because its engine owns a theme
  * catalogue; `lightweight-charts` has none, so the Pro layer fans the same
  * {@link ChartTheme} tokens out over the props `TChart` already exposes — and a
  * caller's own colour prop still wins, because these are merged underneath it.
  *
  * 把命名主题翻译成它隐含的那组 {@link TChartProps}。
  *
- * `@klinecharts/pro` 只需一个 `theme` 字符串，因为它的引擎自带主题目录；
+ * v9 Pro 层只需一个 `theme` 字符串，因为它的引擎自带主题目录；
  * `lightweight-charts` 没有，所以 Pro 层把同一批 {@link ChartTheme} token 扇出到
  * `TChart` 已有的 prop 上 —— 并且调用方自己传的颜色 prop 仍然优先，因为这些值垫在它下面。
  */
@@ -426,17 +426,17 @@ export function formattersFor(
 
 /**
  * Whether a bar size is shorter than a day, i.e. whether the axis has to print
- * a clock time to be readable. `@klinecharts/pro` derives this from its
+ * a clock time to be readable. The v9 Pro layer derives this from its
  * `Period`; here the label itself carries the unit.
  *
- * 该 K 线周期是否小于一天，也就是坐标轴是否必须打印时分才读得懂。`@klinecharts/pro`
+ * 该 K 线周期是否小于一天，也就是坐标轴是否必须打印时分才读得懂。v9 Pro 层
  * 由 `Period` 推出这一点；这里的标签本身就带单位。
  *
  * Case carries meaning here: lowercase `m` is a minute, uppercase `M` a month —
- * the same spelling `@klinecharts/pro` periods and OKX bar codes use. Folding
+ * the same spelling the v9 Pro layer's periods and OKX bar codes use. Folding
  * the case would read `1M` as one minute and print a clock on a monthly chart.
  *
- * 这里的大小写是有含义的：小写 `m` 是分钟，大写 `M` 是月 —— 与 `@klinecharts/pro`
+ * 这里的大小写是有含义的：小写 `m` 是分钟，大写 `M` 是月 —— 与 v9 Pro 层
  * 的周期和 OKX 的周期代码同一种拼法。折叠大小写会把 `1M` 读成一分钟，于是月线图上
  * 会去打印时分。
  */

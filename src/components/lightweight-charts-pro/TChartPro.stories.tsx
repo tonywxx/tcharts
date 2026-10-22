@@ -130,12 +130,12 @@ export const ChineseAsiaShanghai: Story = {
 };
 
 /**
- * Several indicators at once — the counterpart of `KChartPro`'s
+ * Several indicators at once — the counterpart of the v9 Pro layer's
  * "With indicators", down to the same list: EMA, MA and BOLL over the candles,
  * volume, MACD and RSI in their own panes. Any of the 27 names the toolbar
  * offers can be dropped into either list; this is simply a legible sample.
  *
- * 同时开多个指标 —— 对应 `KChartPro` 的 “With indicators”，连清单都一样：主图 EMA、MA
+ * 同时开多个指标 —— 对应 v9 Pro 层的 “With indicators”，连清单都一样：主图 EMA、MA
  * 与 BOLL，副面板成交量、MACD 与 RSI。工具栏提供的 27 个名字里任意一个都可以放进任一
  * 列表，这里只是一个看得清的样例。
  */
@@ -159,8 +159,8 @@ export const OneMinuteBars: Story = {
 };
 
 /**
- * Four-hour candles — the matching story to `KChartPro`'s "Live 4-hour bars".
- * 四小时 K 线 —— 与 `KChartPro` 的 “Live 4-hour bars” 对应的一条。
+ * Four-hour candles — the matching story to the v9 Pro layer's "Live 4-hour bars".
+ * 四小时 K 线 —— 与 v9 Pro 层的 “Live 4-hour bars” 对应的一条。
  */
 export const FourHourBars: Story = {
 	name: "Live 4-hour bars",
@@ -168,10 +168,10 @@ export const FourHourBars: Story = {
 };
 
 /**
- * A background watermark, the counterpart of `KChartPro`'s `watermark` prop —
+ * A background watermark, the counterpart of the v9 Pro layer's `watermark` prop —
  * which here is `TChart`'s `watermarkText` under `watermarkVisible`.
  *
- * 背景水印，对应 `KChartPro` 的 `watermark` —— 在这一层就是 `TChart` 的
+ * 背景水印，对应 v9 Pro 层的 `watermark` —— 在这一层就是 `TChart` 的
  * `watermarkText` 加 `watermarkVisible`。
  */
 export const Watermark: Story = {
@@ -179,10 +179,10 @@ export const Watermark: Story = {
 };
 
 /**
- * A custom palette through the declarative props — where `KChartPro` forwards a
+ * A custom palette through the declarative props — where the v9 layer forwards a
  * `styles` bag, this layer fans the same intent out over `TChart`'s own keys.
  *
- * 用声明式 props 表达的定制配色 —— `KChartPro` 转发的是一个 `styles` 包，本层则把
+ * 用声明式 props 表达的定制配色 —— v9 Pro 层转发的是一个 `styles` 包，本层则把
  * 同样的意图扇出到 `TChart` 自己的键上。
  */
 export const CustomPalette: Story = {

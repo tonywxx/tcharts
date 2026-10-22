@@ -4,20 +4,20 @@ import type { TChartDataItem } from "../lightweight-charts/TChart";
 import type { TChartProIndicator } from "./t-chart-pro-options";
 
 /**
- * The indicator layer `@klinecharts/pro` gets for free from its engine:
+ * The indicator layer the v9 Pro layer gets for free from its engine:
  * `lightweight-charts` plots series and nothing derived, so every study the Pro
  * toolbar offers is computed here and handed to the chart as ordinary Series.
  *
- * 这一层指标是 `@klinecharts/pro` 由引擎白拿、而 `lightweight-charts` 没有的东西：
+ * 这一层指标是 v9 Pro 层由引擎白拿、而 `lightweight-charts` 没有的东西：
  * 后者只画 Series、不画衍生值，所以 Pro 工具栏提供的每个指标都在这里算出来，
  * 再作为普通 Series 交给图表。
  *
  * The catalogue and every formula in it follow `klinecharts` v10, which is the
- * engine behind `KChartPro` — same 27 studies, same `calcParams`, so switching
+ * engine behind the v9 Pro layer — same 27 studies, same `calcParams`, so switching
  * Wrappers does not change what an indicator means (ADR-0001: the engine's own
  * vocabulary stays visible, only the drawing surface differs).
  *
- * 指标目录与其中每个公式都对齐 `klinecharts` v10，也就是 `KChartPro` 背后的引擎 ——
+ * 指标目录与其中每个公式都对齐 `klinecharts` v10，也就是 v9 Pro 层背后的引擎 ——
  * 同样 27 个指标、同样的 `calcParams`，因此换一层 Wrapper 不会改变指标的含义
  * （ADR-0001：引擎自己的词汇仍然可见，不同的只是绘制表面）。
  *
@@ -1122,12 +1122,12 @@ function tracksOf(
  * Turn the requested indicator names into plotted tracks.
  * 把请求的指标名转换为可绘制的轨迹。
  *
- * Both lists take any name in the catalogue, exactly as `KChartPro` does — its
+ * Both lists take any name in the catalogue, exactly as the v9 layer does — its
  * engine decides nothing about placement, so neither does this layer. What the
  * name lands in decides where it is drawn: `mainIndicators` go on the price pane,
  * each entry of `subIndicators` gets a pane of its own below it.
  *
- * 两个清单都接受目录里的任意名字，与 `KChartPro` 一致 —— 它的引擎不判断落点，本层同样
+ * 两个清单都接受目录里的任意名字，与 v9 Pro 层一致 —— 它的引擎不判断落点，本层同样
  * 不判断。落在哪个清单决定画在哪里：`mainIndicators` 画在价格主图，`subIndicators`
  * 的每一项在下方各占一个面板。
  */
