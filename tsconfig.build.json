@@ -1,0 +1,21 @@
+{
+	"extends": "./tsconfig.app.json",
+	"compilerOptions": {
+		"noEmit": false,
+		"emitDeclarationOnly": true,
+		"declaration": true,
+		"declarationMap": true,
+		"outDir": "dist",
+		"rootDir": "src",
+		"tsBuildInfoFile": "./node_modules/.tmp/tsconfig.build.tsbuildinfo"
+	},
+	"include": [
+		"src/components/lightweight-charts/TChart.tsx",
+		"src/components/lightweight-charts-pro/TChartPro.tsx"
+	],
+	"exclude": [
+		"src/**/*.stories.tsx",
+		"src/**/*.test.ts",
+		"src/**/__data__/**/*"
+	]
+}
